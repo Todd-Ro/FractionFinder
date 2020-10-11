@@ -26,6 +26,13 @@ public class Main {
 	long[] piInvApprox = SmallestDenom.smallFracProper(invPi);
 	System.out.println(Arrays.toString(piInvApprox));
 
+	double rootTwo = Math.sqrt(2);
+	long[] rootTwoApprox = SmallestDenom.smallFracImproper(rootTwo, .0002);
+	System.out.println(Arrays.toString(rootTwoApprox));
 
+	System.out.println();
+
+	System.out.println((((double) 1) / 5) * ((double) 1) / 11); // Should be .018 with 18 repeating
+	System.out.println((((double) 1) / 11) * ((double) 1) / 101); // Should be .0009 repeating
     }
 }
