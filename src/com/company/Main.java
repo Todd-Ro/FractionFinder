@@ -27,8 +27,10 @@ public class Main {
 	System.out.println(Arrays.toString(piInvApprox));
 
 	double rootTwo = Math.sqrt(2);
-	long[] rootTwoApprox = SmallestDenom.smallFracImproper(rootTwo, .0002);
+	long[] rootTwoApprox = SmallestDenom.smallFracImproper(rootTwo, .0005);
+	long[] rootTwoApproxAccur = SmallestDenom.smallFracImproper(rootTwo, .0002);
 	System.out.println(Arrays.toString(rootTwoApprox));
+	System.out.println(Arrays.toString(rootTwoApproxAccur));
 
 	System.out.println();
 
