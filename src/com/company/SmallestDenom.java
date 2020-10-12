@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class SmallestDenom {
     /*Finds the fraction with the smallest numerator and denominator that approximates an input with a given level of
     accuracy.
@@ -77,6 +79,28 @@ public class SmallestDenom {
         //Intended for use when d is between 0 and 1
         //Uses 0.25% target accuracy by default
         return smallFracProper(d, 0.0025);
+    }
+
+    public static ArrayList<Long> bestDenomsInRange(double d, int lower, int upper, double errorTarget) {
+        /*Returns all rational approximations for d with a denominator between
+        lower and upper, inclusive, that have an error below errorTarget
+         */
+        ArrayList<Long> ret = new ArrayList<Long>();
+        double error;
+        int i = lower;
+        while (i <= upper) {
+            long numer = Math.round(d*i);
+            double approx = ((double) numer) / i;
+            if (approx > d) {error = approx/d - 1;}
+            else {error = d/approx - 1;}
+            if (error < errorTarget) {
+                long[] fracApprox = new long[] {numer, i};
+                ret.add(fracApprox[0]);
+                ret.add(fracApprox[1]);
+            }
+            i++;
+        }
+        return ret;
     }
 
 

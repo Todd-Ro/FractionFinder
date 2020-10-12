@@ -31,6 +31,8 @@ public class Main {
 	long[] rootTwoApproxAccur = SmallestDenom.smallFracImproper(rootTwo, .0002);
 	System.out.println(Arrays.toString(rootTwoApprox));
 	System.out.println(Arrays.toString(rootTwoApproxAccur));
+	System.out.println(SmallestDenom.bestDenomsInRange(rootTwo, 89, 107, .0005));
+	System.out.println(SmallestDenom.bestDenomsInRange(rootTwo, 89, 155, .0002));
 
 	System.out.println();
 
